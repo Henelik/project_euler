@@ -35,7 +35,6 @@ for y, row in enumerate(data):
         # diagonal down and right
         if y+3 < len(data) and x+3 < len(row):
             products.append(numpy.prod([number, data[y+1][x+1], data[y+2][x+2], data[y+3][x+3]]))
-        largest_prod = max(products)
         # diagonal down and left
         if y+3 < len(data) and x-3 >= 0:
             products.append(numpy.prod([number, data[y+1][x-1], data[y+2][x-2], data[y+3][x-3]]))
