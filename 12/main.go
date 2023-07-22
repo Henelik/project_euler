@@ -1,21 +1,24 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"math"
+)
 
 func count_divisors(n int) int {
 	// start with 1 divisor: the number itself
 	num_divisors := 1
 
-	for i := 1; i <= n/2; i++ {
+	for i := 1; i <= int(math.Sqrt(float64(n))); i++ {
 		if n%i == 0 {
-			num_divisors += 1
+			num_divisors += 2
 		}
 	}
 
 	return num_divisors
 }
 
-// completes in 6m34.17s
+// completes in 0.147s
 func main() {
 	triangle_sum := 0
 

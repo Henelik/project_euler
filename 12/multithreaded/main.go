@@ -1,14 +1,17 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"math"
+)
 
 func count_divisors(n int) int {
 	// start with 1 divisor: the number itself
 	num_divisors := 1
 
-	for i := 1; i <= n/2; i++ {
+	for i := 1; i <= int(math.Sqrt(float64(n))); i++ {
 		if n%i == 0 {
-			num_divisors += 1
+			num_divisors += 2
 		}
 	}
 
@@ -31,7 +34,7 @@ func worker(solution_chan chan<- int, start, stride, sum_start int) {
 	}
 }
 
-// completes in 1m59.65s
+// completes in 0.058s
 func main() {
 	threads := 8
 	triangle_sum := 0

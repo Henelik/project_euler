@@ -1,4 +1,6 @@
-# completes in 1h57m53.87s
+# completes in 21s
+
+import math
 
 class TriangleNumbers:
     def __iter__(self):
@@ -13,7 +15,7 @@ class TriangleNumbers:
     
 def count_divisors(n):
     divisors = 1
-    for i in range(1, n//2):
+    for i in range(1, int(math.sqrt(n))):
         if n%i == 0:
             divisors += 1
     return divisors
